@@ -1,0 +1,11 @@
+import re
+
+a = open("/var/log/messages", "r")
+b = a.readlines()
+
+s = re.compile("serial")
+for i in b:
+  if s.search(i):
+   print i
+   line = i
+   print line.split()[4]
